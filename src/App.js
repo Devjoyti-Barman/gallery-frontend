@@ -8,7 +8,7 @@ import EditImage from './components/edit/editImage';
 import ShowImage from './components/showImage/showImage';
 import Upload from './components/upload/upload';
 import Home from './components/home/home';
-
+import Error from './error/error';
 import {
   BrowserRouter as Router,
   Switch,
@@ -61,7 +61,7 @@ function App() {
             
               </Router>
               <Router path="/error">
-                  <div>404 Page not found</div>
+                  <Error/>
               </Router>
 
               <Redirect to="/page/1" />
