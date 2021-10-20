@@ -13,7 +13,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
 
 const history = createBrowserHistory();
@@ -55,12 +56,15 @@ function App() {
               <Router path="/upload-image">
                    <Upload/>
               </Router>
-              <Router path="/">  
+              <Router path="/page/:id">  
                  <Home/>
+            
               </Router>
               <Router path="/error">
                   <div>404 Page not found</div>
               </Router>
+
+              <Redirect to="/page/1" />
           </Switch>
       
          </div>

@@ -1,15 +1,34 @@
 import axios from 'axios';
 import Card from '../card/card';
 import { useEffect, useState } from 'react';
+import {useParams,useHistory,useRouteMatch } from 'react-router-dom';
 import './home.css';
 
 
 function Home(){
     
     const [Image,setImage]=useState(null);
+      
+    let history=useHistory();
+
+    let match=useRouteMatch('/page/:id');
+
+    function HandleClick(inc){
+        
+        let pageNo=parseInt(inc)+parseInt(match.params.id);
+        window.location.replace(`/page/${ pageNo}`);
+    }
 
     useEffect(()=>{
-        const API="http://localhost:5000/api/image/page/1"
+
+        if(match.isExact===false || isNaN(match.params.id) || match.params.id<1 ){
+            return window.location.replace('/error');
+        }
+
+        //console.log(match);
+        
+        const API=`http://localhost:5000/api/image/page/${Math.max(1, match.params.id) }`;
+
         async function getImages(){
             const {data}=await axios.get(API);
             let temp=[];
@@ -38,7 +57,6 @@ function Home(){
                 i+=3;            
             }
 
-            console.log([...temp])
             setImage(temp);
         }
 
@@ -48,7 +66,19 @@ function Home(){
 
     return (
        <div>
-            { Image===null ?   <div> </div> : [...Image]  } 
+            { Image===null ?   <div></div> : 
+                (   <div> 
+                        <div className="pagination-container">  
+                            { [...Image] } 
+                            <div className="btn-container"> 
+                                <button className="prev-btn" onClick={()=>HandleClick(-1)} > Prev Page</button>    
+                                <button className="next-btn" onClick={()=>HandleClick(1)} > Next Page</button>
+                            </div> 
+                        </div> 
+                        
+                    </div> 
+                )  
+            } 
        </div>
     )
 }

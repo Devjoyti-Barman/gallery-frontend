@@ -8,3 +8,33 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+.pagination-container{
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-container{
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.next-btn,.prev-btn{
+    padding: 5px;
+    width: 100px;
+    height: 35px;
+    font-size: 14px;
+    margin-top: 10px;
+    color: white;
+    background-color: rgb(136, 136, 241);
+    border:none;
+    cursor: pointer;
+}
