@@ -20,7 +20,21 @@ function ShowImage(){
     let match=useRouteMatch('/show/:id');
     
     async function HandleDelete(){
-         
+        const API="http://localhost:5000/api/detele-image";
+        
+        try {
+            const data=await axios.delete(API,{data:{id:match.params.id}} );
+            console.log(data);
+            if(data.status===200){
+                alert("successfully deleted the image");
+                window.location.replace(`/`);
+            }else 
+               alert("Unable to deleted the image");
+        } catch (error) {
+            
+            alert("something went wrong");
+            console.log({error});
+        }
     }
 
     useEffect(() => {
@@ -63,7 +77,7 @@ function ShowImage(){
                             {ImgDetails}
                         </div>  
                     </div>
-                    <button className="edit-btn" onClick={()=>history.push(`/edit/${id}`)}>Edit</button>
+                    <button className="edit-btn" onClick={()=>window.location.replace(`/edit/${id}`)}>Edit</button>
                     <button className="delete-btn" onClick={HandleDelete}>Delete</button>
                 </div> 
             : <div></div>}
