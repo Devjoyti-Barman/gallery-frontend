@@ -18,7 +18,7 @@ function Header(){
             <header className="header">
                 <div> <Link className="Link" to="/">  Gallery </Link> </div>
                 <div className="search-container"> 
-                    <input className="search-bar" value={search} onChange={(e)=>{setSearch(e.target.value)}} type="search" placeholder="search by image Name"/>
+                    <input className="search-bar" value={search} onChange={(e)=>{setSearch(e.target.value)}} type="search" placeholder="Search By Image Name"/>
                     <button className="search-btn" onClick={HandleSearch}> Search</button>
                 </div>
                 <div> <Link className="Link" to="/upload-image"> Upload Image </Link> </div>

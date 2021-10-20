@@ -64,7 +64,7 @@ function Search(){
        <div>
             { Image===null ?   <div></div> : 
                 (   <div> 
-                        { [...Image] }                         
+                        { Image.length===0 ? <div className="not-found"> No Data found... </div> : [...Image] }                         
                     </div> 
                 )  
             } 
