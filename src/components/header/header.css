@@ -1,0 +1,22 @@
+.header-container{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    height: 80px;
+    margin-bottom: 50px;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+    margin: 0 auto;
+    width: 80%;
+    color: aqua;
+    
+}
+
+.Link{
+    text-decoration: none;
+    font-size: 20px;
+    color: #000 !important;
+}
