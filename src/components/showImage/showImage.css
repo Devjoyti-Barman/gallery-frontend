@@ -1,0 +1,15 @@
+.image-container{
+    width: 400px;
+    margin: 0 auto;
+}
+
+.edit-image{
+    width: 400px;
+    height: 400px;
+}
+
+.text-place{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    word-wrap: break-word;
+}

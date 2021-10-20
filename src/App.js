@@ -4,6 +4,7 @@ import axios from 'axios';
 import {useEffect, useState} from 'react';
 import Header from './components/header/header';
 import EditImage from './components/edit/editImage';
+import ShowImage from './components/showImage/showImage';
 import {
   BrowserRouter as Router,
   Switch,
@@ -44,7 +45,7 @@ function App() {
                   <div>Details</div>
               </Router>
               <Router path="/show/:id">
-                  <div>Show</div>
+                  <ShowImage/>
               </Router>
 
               <Router path="/upload-image">
