@@ -24,6 +24,7 @@ function Home(){
                                ImgName={data[j+i].ImgName}  
                                ImgDetails={data[j+i].ImgDetails} 
                                imageSrc={data[j+i].img} 
+                               imageID={data[j+i].id}
                                key={j+i}
                             />
                     )
