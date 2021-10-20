@@ -53,7 +53,7 @@ function EditImage(){
 
         getImage();
           
-    }, [])
+    }, [id])
     return(
         <div>
             

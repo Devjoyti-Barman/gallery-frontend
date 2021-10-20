@@ -2,9 +2,13 @@ import './App.css';
 import Card from './components/card/card';
 import axios from 'axios';
 import {useEffect, useState} from 'react';
+import { createBrowserHistory } from "history";
 import Header from './components/header/header';
 import EditImage from './components/edit/editImage';
 import ShowImage from './components/showImage/showImage';
+import Upload from './components/upload/upload';
+import Home from './components/home/home';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,7 +16,7 @@ import {
   Link
 } from "react-router-dom";
 
-
+const history = createBrowserHistory();
 function App() {
   
   const [photo,setPhoto]=useState(null);
@@ -34,7 +38,7 @@ function App() {
   // }, [])
   return (
 
-    <Router>
+    <Router  forceRefresh={true} history={history}>
         <div className="App">
           <Header/>
           <Switch>
@@ -49,17 +53,16 @@ function App() {
               </Router>
 
               <Router path="/upload-image">
-                  <div>Upload Image</div>
+                   <Upload/>
               </Router>
-
+              <Router path="/">  
+                 <Home/>
+              </Router>
               <Router path="/error">
                   <div>404 Page not found</div>
               </Router>
           </Switch>
-            <header className="App-header">
-              <Card/>
-              {photo===null ? <div></div> : <img src={photo.data}/> }
-              </header>
+      
          </div>
     </Router>
 

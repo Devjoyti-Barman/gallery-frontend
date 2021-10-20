@@ -18,7 +18,11 @@ function ShowImage(){
     let history=useHistory();
 
     let match=useRouteMatch('/show/:id');
-       
+    
+    async function HandleDelete(){
+         
+    }
+
     useEffect(() => {
         const API=`http://localhost:5000/api/get-image/${match.params.id}`;
         async function getImage(){
@@ -59,6 +63,8 @@ function ShowImage(){
                             {ImgDetails}
                         </div>  
                     </div>
+                    <button className="edit-btn" onClick={()=>history.push(`/edit/${id}`)}>Edit</button>
+                    <button className="delete-btn" onClick={HandleDelete}>Delete</button>
                 </div> 
             : <div></div>}
 

@@ -1,0 +1,15 @@
+.box-container{
+
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 30px;
+    width: 400px;
+    margin: 0 auto;
+}
+.box{
+    width: 300px;
+    margin: 0 auto;
+}
+.input-title{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

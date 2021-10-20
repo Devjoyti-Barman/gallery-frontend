@@ -13,3 +13,27 @@
     margin-bottom: 5px;
     word-wrap: break-word;
 }
+.edit-btn{
+
+    margin: 5px;
+    padding: 5px;
+    width: 100px;
+    height: 35px;
+    font-size: 14px;
+    color: white;
+    background-color: rgb(136, 136, 241);
+    border:none;
+    cursor: pointer;
+
+}
+.delete-btn{
+    margin: 5px;
+    padding: 5px;
+    width: 100px;
+    height: 35px;
+    font-size: 14px;
+    color: white;
+    background-color: rgb(218, 117, 117);
+    border:none;
+    cursor: pointer;
+}

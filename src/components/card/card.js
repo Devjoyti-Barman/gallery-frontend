@@ -1,17 +1,18 @@
 import Image from './logo192.png'
 import './card.css';
 
-function Card(){
-
+function Card(props){
+    
+    const {ImgName,ImgDetails,imageSrc}=props;
+    
     return(
         
         <div className="card">
 
             <img 
-              src={Image} className="image"/>
+              src={imageSrc} className="image"/>
             <div className="container">
-                <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p> 
+                <p>Image Name: <b>{ImgName}</b></p> 
             </div>
         
 
