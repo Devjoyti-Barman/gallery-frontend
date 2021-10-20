@@ -20,23 +20,6 @@ import {
 const history = createBrowserHistory();
 function App() {
   
-  const [photo,setPhoto]=useState(null);
-
-  // useEffect( () => {
-  //   async function getImage(){
-  //     try {
-  //       const id="616ef43d69a06e93713efff7";
-  //       const {data}=await axios.get(`http://localhost:5000/api/get-image/${id}`);
-  //       setPhoto(data);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-
-  //   }
-    
-
-  //   getImage();
-  // }, [])
   return (
 
     <Router  forceRefresh={true} history={history}>
