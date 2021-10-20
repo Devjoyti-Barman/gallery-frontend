@@ -8,7 +8,8 @@ import EditImage from './components/edit/editImage';
 import ShowImage from './components/showImage/showImage';
 import Upload from './components/upload/upload';
 import Home from './components/home/home';
-import Error from './error/error';
+import Error from './components/error/error';
+import Search from './components/search/search';
 import {
   BrowserRouter as Router,
   Switch,
@@ -41,7 +42,9 @@ function App() {
               </Router>
               <Router path="/page/:id">  
                  <Home/>
-            
+              </Router>
+              <Router path="/search/:q">
+                  <Search/>
               </Router>
               <Router path="/error">
                   <Error/>
