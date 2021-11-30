@@ -7,7 +7,7 @@ function App() {
 		return (
 		<Router>
 			<Routes> 
-				<Route path="/create-blog" element={<CreateBlog/>}/>
+				<Route path="create-blog" element={<CreateBlog/>}/>
 
 			</Routes>
 		</Router>
