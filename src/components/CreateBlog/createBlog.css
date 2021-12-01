@@ -7,7 +7,7 @@
 .img-input{
     display: block;
 }
-.btn-image-url{
+.btn-image{
     display: block;
     font-family: 'Lato', sans-serif;
     width: 100px;
@@ -18,10 +18,27 @@
     margin-top: 10px;
     background-color: #83b2d5;;
 }
+
+.generate-url-btn{
+    background-color: #007bff;
+    color: white;
+}
+.copy-url-btn{
+    background-color: #28a745;
+    color: white;
+}
+
 .generate-url{
     width: 60%;
     height: 50px;
 }
+.generate-btn-container{
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
 .btn-submit{
   font-family: 'Lato', sans-serif;
   width: 100px;
@@ -32,6 +49,16 @@
   margin: 10px;
   margin-bottom: 20px;
   background-color: #4CAF50;;
+}
+
+@media screen and (max-width: 280px) {
+    .generate-btn-container{
+        display: block;
+        width: 100%;
+    }
+    .img-input{
+        width: 80%;
+    }
 }
 
 
