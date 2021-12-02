@@ -9,15 +9,17 @@ import Editor from '../Editor/editor';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './createBlog.css';
+import axios from 'axios';
 
 const upload_preset='kisancareBlog';
 const cloud_name='dtdjhqe3m';
 const uploadImageURL='https://api.cloudinary.com/v1_1/dtdjhqe3m/image/upload';
-
+const uploadBlogURL='http://localhost:3000/blog/create';
 
 function CreateBlog(){
     const [selectImage,setSelectImage]=useState('');
     const [generateIMG_URL,setGenerateIMG_URL]=useState('');
+
     const [title,setTitle]=useState('');
     const [data,setData]=useState('');
     const [img,setImg]=useState('');
@@ -120,12 +122,50 @@ function CreateBlog(){
 
     }
 
-    function submitButton(){
+    async function submitButton(){
         
         let isOK= checkParameter(title,data,img,isactive);
-        if( isOK===true ){
-           toast.loading('waiting');
-        }
+        
+        if( isOK===false ) return;
+
+        try {
+            
+            async function createBlogAPI(){
+
+                const formData = new FormData();
+                formData.append('file',img);
+                formData.append('upload_preset',upload_preset);
+                formData.append('cloud_name',cloud_name);
+                
+                const response=await fetch(uploadImageURL,{method:"post",body:formData});
+                const result = await response.json();
+                
+                const responseBlog=await axios({
+                    method:'POST',
+                    url:uploadBlogURL,
+                    withCredentials:true,
+                    data:{
+                        title,
+                        frontImage:result.url,
+                        body:data
+                    }
+                });
+            } 
+
+            toast.promise(
+                createBlogAPI,
+                {
+                    pending:'saving the Blog',
+                    success: 'saved Blog successfully👌',
+                    error: 'something went wrong unable to save the blog🤯'
+                }
+            )
+      
+        } catch (error) {
+            console.log(error);
+            toast.error('something went wrong please try again later');
+        }        
+        
     }
     
 
