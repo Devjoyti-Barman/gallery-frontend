@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Outfit&family=Roboto&display=swap');
+
+.signup-container{
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    background-color: white;
+}
+.signup-btn{
+    box-shadow: 0px 0px 5px #aaaaaa;
+    height: 50px;
+    display: flex;
+    font-family: 'Outfit', sans-serif;
+    margin-top: 10px;
+}
+.signup{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    width: 280px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.signup-icon{
+    width: 40px;
+    height: 40px;
+}

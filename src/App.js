@@ -1,11 +1,12 @@
 import './App.css';
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
+import { useEffect,useState } from 'react';
 
 import CreateBlog from './components/CreateBlog/createBlog';
 import ShowBlog from './components/showBlog/showBlog';
 import GoogleAuth from './components/googleAuth/googleAuth';
-import { useEffect,useState } from 'react';
-import axios from 'axios';
+import MainHeader from './components/mainheader/mainheader';
+import Signup from './components/signup/signup';
 
 function App() {
     
@@ -37,17 +38,27 @@ function App() {
 	},[])
 
 		return (
-		<Router>
-			<Routes> 
-				<Route path="auth" element={<GoogleAuth/>}/> 
-				<Route path="create">
-				   <Route path="blog" element={<CreateBlog/>} /> 
-				</Route>
-                <Route path="show">
-					<Route path="blog/:blogno" element={<ShowBlog/>} />
-				</Route> 
-			</Routes>
-		</Router>
+	    <div>
+			<MainHeader/>	
+			<main> 
+    		    <Router>
+    		    	<Routes> 
+						<Route path='/signup' element={<Signup/>} />
+    		    		{/* <Route path='/' element={<MainHeader/>}>
+        
+    		    		</Route> */}
+    		    		{/* <Route path="auth" element={<GoogleAuth/>}/> 
+    		    		<Route path="create">
+    		    		   <Route path="blog" element={<CreateBlog/>} /> 
+    		    		</Route>
+                        <Route path="show">
+    		    			<Route path="blog/:blogno" element={<ShowBlog/>} />
+    		    		</Route> 
+    		    		<Route path='' element={<Header/>}/> */}
+    		    	</Routes>
+    		    </Router>
+			</main>
+		</div>
 		);
 }
 
