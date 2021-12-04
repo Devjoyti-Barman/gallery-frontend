@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Outfit&family=Roboto:wght@300;400&display=swap');
+
+.signin-container{
+    width: 500px;
+    margin: 0 auto;
+    padding: 30px 0;
+    
+}
+.signin{
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background: #fff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 40px;
+}
+.signin h2{
+    text-align: center;
+    font-size: 34px;
+    margin: 10px 0 15px;
+    font-weight: 500;
+    line-height: 1.2;
+} 
+.signin p{
+    color: #999;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.social-btn{
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-link{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 18px;   
+    width: 180px;
+    height: 45px;
+    border: 2px solid rgb(41, 67, 241);
+    border-radius: 50px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    color: gray;
+
+}
+
+.social-img{
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+.social-title{
+   margin-right: 30px;
+}
+
+
+.or-seperator{
+    margin: 50px 0 15px;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+}
+.or-seperator b{
+    padding: 0 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 40px;
+    background: #fff;
+    display: inline-block;
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
+    position: relative;
+    top: -22px;
+    z-index: 1;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+.signin-group{
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.signin-input{
+    display: block;
+    width: 90%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    font-size: 16px;
+    box-shadow: none;
+    border-radius: 50px;
+    outline: none !important; 
+}
+.signin-input:focus{
+    border:2px solid rgb(137, 180, 240);
+}
+
+.signin-button{
+   width: 80%;
+   height: 40px;
+   font-family: 'Roboto', sans-serif;
+   font-size: large;
+
+}
+
+.footer-signin-link{
+    text-align: center;
+}

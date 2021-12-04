@@ -7,6 +7,7 @@ import ShowBlog from './components/showBlog/showBlog';
 import GoogleAuth from './components/googleAuth/googleAuth';
 import MainHeader from './components/mainheader/mainheader';
 import Signup from './components/signup/signup';
+import Signin from './components/signin/signin';
 
 function App() {
     
@@ -44,6 +45,7 @@ function App() {
     		    <Router>
     		    	<Routes> 
 						<Route path='/signup' element={<Signup/>} />
+						<Route path='/signin' element={<Signin/> } />
     		    		{/* <Route path='/' element={<MainHeader/>}>
         
     		    		</Route> */}
