@@ -5,6 +5,13 @@ import googleicon from '../../images/google-icon.png';
 import githubicon from '../../images/github-icon.png';
 
 function Signup(){
+    
+    const googleLoginURL='http://localhost:3000/auth/google';
+    const githubLoginURL='http://localhost:3000/auth/github';
+
+    const redirectToServiceSSO= async (authURL)=>{
+        const newWindow=window.open(authURL,'_self','width:100%;height:100%');
+    }
 
     return(
         <div>
@@ -14,15 +21,15 @@ function Signup(){
                     <p>Sign up with your social media account or email address</p>
                     <div className='social-btn'>
                         
-                        <Link to='/' className='social-link'>
+                        <div onClick={()=>redirectToServiceSSO(googleLoginURL)} className='social-link'>
                           <img className='social-img' src={googleicon} />
                           <div className='social-title'  > Google </div>
-                        </Link>
+                        </div>
 
-                        <Link to='/' className='social-link'>
+                        <div onClick={()=>redirectToServiceSSO(githubLoginURL)} className='social-link'>
                           <img className='social-img' src={githubicon} />
                           <div  className='social-title' > Github </div>
-                        </Link>
+                        </div>
 
                     </div>
                     {/* google sign up Container */}
