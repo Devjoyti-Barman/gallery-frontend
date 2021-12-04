@@ -48,14 +48,6 @@
 
 }
 
-/* .social-info{
-    display: flex;
-    width: 120px;
-    border:2px solid rgb(31, 31, 243);
-    border-radius: 0%;
-    align-items: center;
-    justify-content: space-between;
-} */
 .social-img{
     width: 30px;
     height: 30px;
@@ -124,4 +116,8 @@
    font-family: 'Roboto', sans-serif;
    font-size: large;
 
+}
+
+.footer-signin-link{
+    text-align: center;
 }

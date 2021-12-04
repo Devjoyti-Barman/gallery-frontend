@@ -32,7 +32,6 @@ function Signup(){
                         </div>
 
                     </div>
-                    {/* google sign up Container */}
                     <div className='or-seperator'>
                         <b>or</b>
                     </div>
@@ -72,7 +71,11 @@ function Signup(){
                         >Sign Up
                         </Button>
                     </Typography>
+                    <div className='footer-signin-link'> 
+                        Already have an account? <Link to='/signin'>Login here</Link>
+                    </div>
                 </div>
+
            </div>
         </div>
     )
