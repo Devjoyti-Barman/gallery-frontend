@@ -4,10 +4,10 @@ import { useEffect,useState } from 'react';
 
 import CreateBlog from './components/CreateBlog/createBlog';
 import ShowBlog from './components/showBlog/showBlog';
-import GoogleAuth from './components/googleAuth/googleAuth';
 import MainHeader from './components/mainheader/mainheader';
 import Signup from './components/signup/signup';
 import Signin from './components/signin/signin';
+import Confirmation from './components/comfirmation/confirmation';
 
 function App() {
     
@@ -44,19 +44,17 @@ function App() {
 			<main> 
     		    <Router>
     		    	<Routes> 
-						<Route path='/signup' element={<Signup/>} />
-						<Route path='/signin' element={<Signin/> } />
-    		    		{/* <Route path='/' element={<MainHeader/>}>
-        
-    		    		</Route> */}
-    		    		{/* <Route path="auth" element={<GoogleAuth/>}/> 
-    		    		<Route path="create">
-    		    		   <Route path="blog" element={<CreateBlog/>} /> 
-    		    		</Route>
-                        <Route path="show">
-    		    			<Route path="blog/:blogno" element={<ShowBlog/>} />
-    		    		</Route> 
-    		    		<Route path='' element={<Header/>}/> */}
+						<Route path='signup' element={<Signup/>} />
+						<Route path='signin' element={<Signin/> } />
+						<Route path='create'>
+							<Route path='blog' element={<CreateBlog/>}/>
+						</Route>
+						<Route path='show'>
+							<Route path='blog'> 
+							    <Route path=':blogID' element={<ShowBlog/> } />
+							</Route>
+						</Route>
+						<Route path='confirmation/:tokenID' element={<Confirmation/>}/>
     		    	</Routes>
     		    </Router>
 			</main>
