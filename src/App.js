@@ -9,6 +9,7 @@ import Signup from './components/signup/signup';
 import Signin from './components/signin/signin';
 import ForgotPassword from './components/forgotPassword/forgotPassword';
 import ChangePassword from './components/changePassword/changePassword';
+import Confirmation from './components/confirmation/confirmation';
 
 function App() {
     
@@ -48,6 +49,7 @@ function App() {
 						<Route path='signup' element={<Signup/>} />
 						<Route path='signin' element={<Signin/> } />
 						<Route path='forgot-password' element={<ForgotPassword/>} />
+						<Route path='confirmation/:tokenID' element={<Confirmation/>}/>
 						<Route path='change'>
 							<Route path='password/:tokenID' element={<ChangePassword/>} />
 						</Route>
