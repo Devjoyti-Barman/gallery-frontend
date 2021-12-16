@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom';
 import { Button,Typography } from '@material-ui/core';
 import { ToastContainer, toast } from 'react-toastify';
 import googleicon from '../../images/google-icon.png';
-import githubicon from '../../images/github-icon.png';
 import axios from 'axios';
 import { useState } from 'react';
 
@@ -17,7 +16,6 @@ function Signup(){
     const [confirm_password,setConfirm_password]=useState('');
 
     const googleLoginURL='http://localhost:3000/auth/google';
-    const githubLoginURL='http://localhost:3000/auth/github';
     const localLoginURL='http://localhost:3000/auth/create-user';
     
 
@@ -64,11 +62,6 @@ function Signup(){
                         <div onClick={()=>redirectToServiceSSO(googleLoginURL)} className='social-link'>
                           <img className='social-img' src={googleicon} />
                           <div className='social-title'  > Google </div>
-                        </div>
-
-                        <div onClick={()=>redirectToServiceSSO(githubLoginURL)} className='social-link'>
-                          <img className='social-img' src={githubicon} />
-                          <div  className='social-title' > Github </div>
                         </div>
 
                     </div>

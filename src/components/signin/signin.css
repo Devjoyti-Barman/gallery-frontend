@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Outfit&family=Roboto:wght@300;400&display=swap');
 
 .signin-container{
-    width: 500px;
+    width: 450px;
     margin: 0 auto;
     padding: 30px 0;
     
@@ -29,11 +29,11 @@
 .social-btn{
   display: flex;
   justify-content: space-between;
+  justify-content: center;
 }
 
 .social-link{
     display: flex;
-    justify-content:space-between;
     align-items: center;
     text-decoration: none;
     cursor: pointer;
@@ -118,6 +118,12 @@
 
 }
 
+
 .footer-signin-link{
     text-align: center;
+}
+
+.forgot-password-link{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
