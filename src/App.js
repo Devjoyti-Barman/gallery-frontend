@@ -8,6 +8,8 @@ import MainHeader from './components/mainheader/mainheader';
 import Signup from './components/signup/signup';
 import Signin from './components/signin/signin';
 import Confirmation from './components/comfirmation/confirmation';
+import ForgotPassword from './components/forgotPassword/forgotPassword';
+import ChangePassword from './components/changePassword/changePassword';
 
 function App() {
     
@@ -46,6 +48,10 @@ function App() {
     		    	<Routes> 
 						<Route path='signup' element={<Signup/>} />
 						<Route path='signin' element={<Signin/> } />
+						<Route path='forgot-password' element={<ForgotPassword/>} />
+						<Route path='change'>
+							<Route path='password/:tokenID' element={<ChangePassword/>} />
+						</Route>
 						<Route path='create'>
 							<Route path='blog' element={<CreateBlog/>}/>
 						</Route>
