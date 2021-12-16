@@ -7,7 +7,6 @@ import ShowBlog from './components/showBlog/showBlog';
 import MainHeader from './components/mainheader/mainheader';
 import Signup from './components/signup/signup';
 import Signin from './components/signin/signin';
-import Confirmation from './components/comfirmation/confirmation';
 import ForgotPassword from './components/forgotPassword/forgotPassword';
 import ChangePassword from './components/changePassword/changePassword';
 
@@ -60,7 +59,6 @@ function App() {
 							    <Route path=':blogID' element={<ShowBlog/> } />
 							</Route>
 						</Route>
-						<Route path='confirmation/:tokenID' element={<Confirmation/>}/>
     		    	</Routes>
     		    </Router>
 			</main>
