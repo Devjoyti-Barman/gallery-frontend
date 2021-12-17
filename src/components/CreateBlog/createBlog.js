@@ -28,7 +28,6 @@ function CreateBlog(){
     const [isactive,setIsactive]=useState(false);
     const [tagData, setTagData]=useState([]);
     
-    console.log(tagData);
 
     function HandleCopyButton(){
         copy(generateIMG_URL);
