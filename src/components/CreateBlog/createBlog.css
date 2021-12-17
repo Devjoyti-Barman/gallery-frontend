@@ -52,6 +52,11 @@
   background-color: #4CAF50;;
 }
 
+.tag-input-container{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
 @media screen and (max-width: 280px) {
     .generate-btn-container{
         display: block;

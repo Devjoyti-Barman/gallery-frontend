@@ -4,6 +4,7 @@
 
 
 import {useState} from 'react';
+import TagInput from '../Tags/TagInput';
 import copy from 'copy-to-clipboard';
 import Editor from '../Editor/editor';
 import { ToastContainer, toast } from 'react-toastify';
@@ -25,7 +26,9 @@ function CreateBlog(){
     const [img,setImg]=useState('');
     const [imgURL,setImgURL]=useState('');
     const [isactive,setIsactive]=useState(false);
+    const [tagData, setTagData]=useState([]);
     
+    console.log(tagData);
 
     function HandleCopyButton(){
         copy(generateIMG_URL);
@@ -147,7 +150,8 @@ function CreateBlog(){
                     data:{
                         title,
                         frontImage:result.url,
-                        body:data
+                        body:data,
+                        tags:tagData
                     }
                 });
             } 
@@ -201,7 +205,12 @@ function CreateBlog(){
                 isactive={isactive}
                 setIsactive={setIsactive}    
             />
-
+            <div className='tag-input-container'>
+               <TagInput 
+                   tagData={tagData} 
+                   setTagData={setTagData}
+                />
+            </div>
             <button  className="btn-submit" onClick={submitButton} > Submit </button>
         </div>
     )

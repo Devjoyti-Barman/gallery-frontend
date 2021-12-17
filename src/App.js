@@ -68,12 +68,6 @@ function App() {
 		);
 }
 
-function Auth() {
-	return(
-		<div>
-			<a href="http://localhost:3000/auth/google" > Sign in </a>
-		</div>
-	)
-}
+
 
 export default App;
