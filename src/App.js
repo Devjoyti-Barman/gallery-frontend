@@ -42,10 +42,12 @@ function App() {
 
 		return (
 	    <div>
-			<MainHeader/>	
+				
 			<main> 
     		    <Router>
-    		    	<Routes> 
+				<MainHeader/> 
+    		    	<Routes>
+					    
 						<Route path='signup' element={<Signup/>} />
 						<Route path='signin' element={<Signin/> } />
 						<Route path='forgot-password' element={<ForgotPassword/>} />
