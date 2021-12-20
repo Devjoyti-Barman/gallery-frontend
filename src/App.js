@@ -10,6 +10,7 @@ import Signin from './components/signin/signin';
 import ForgotPassword from './components/forgotPassword/forgotPassword';
 import ChangePassword from './components/changePassword/changePassword';
 import Confirmation from './components/confirmation/confirmation';
+import Blog from './components/blog/blog';
 
 function App() {
     
@@ -45,12 +46,13 @@ function App() {
 				
 			<main> 
     		    <Router>
-				<MainHeader/> 
+				    <MainHeader/> 
     		    	<Routes>
 					    
 						<Route path='signup' element={<Signup/>} />
 						<Route path='signin' element={<Signin/> } />
 						<Route path='forgot-password' element={<ForgotPassword/>} />
+						<Route path='search' element={<Blog/>} />
 						<Route path='confirmation/:tokenID' element={<Confirmation/>}/>
 						<Route path='change'>
 							<Route path='password/:tokenID' element={<ChangePassword/>} />
@@ -59,7 +61,7 @@ function App() {
 							<Route path='blog' element={<CreateBlog/>}/>
 						</Route>
 						<Route path='show'>
-							<Route path='blog'> 
+							<Route path='blog'>
 							    <Route path=':blogID' element={<ShowBlog/> } />
 							</Route>
 						</Route>
