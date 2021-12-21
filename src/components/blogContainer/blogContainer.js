@@ -38,8 +38,7 @@ function BlogContainer(){
                 />
             )
         }
-        console.log(data);
-        console.log(temp);
+        
 
         setGetCard(temp);
         setIsLoading(false);

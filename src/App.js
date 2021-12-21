@@ -52,7 +52,9 @@ function App() {
 						<Route path='signup' element={<Signup/>} />
 						<Route path='signin' element={<Signin/> } />
 						<Route path='forgot-password' element={<ForgotPassword/>} />
-						<Route path='search' element={<Blog/>} />
+						<Route path='search'>
+							<Route path='blog' element={<Blog/>} />
+						</Route>
 						<Route path='confirmation/:tokenID' element={<Confirmation/>}/>
 						<Route path='change'>
 							<Route path='password/:tokenID' element={<ChangePassword/>} />

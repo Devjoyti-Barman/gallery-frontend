@@ -14,7 +14,7 @@ function MainHeader(){
                         <img className='header-icon' src={headerIcon} />
                         <h4> Kisan Care </h4>
                     </NavLink>
-                    <NavLink to='signup'> blog </NavLink>
+                    <NavLink to='search/blog'> blog </NavLink>
              
                 </div>
                 <div>

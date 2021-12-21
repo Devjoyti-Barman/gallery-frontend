@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Outfit&family=Roboto:wght@300&display=swap');
 .blog-card{
     width: 20rem;
     display: block;
@@ -6,13 +6,17 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     background: white;
     margin: 2rem;
+    transition: 0.3s;
 }
-
+.blog-card:hover{
+    scale: 1.05;
+}
 .blog-card-frontImage{
     width: 20rem;
     height: 18rem;
 }
 .blog-card-title{
+    font-family: 'Lato', sans-serif;
     padding: 0.7rem;
     word-wrap: break-word;
     word-break: break-all;
