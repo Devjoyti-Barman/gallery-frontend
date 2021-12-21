@@ -1,0 +1,25 @@
+
+.blog-card{
+    width: 20rem;
+    display: block;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background: white;
+    margin: 2rem;
+}
+
+.blog-card-frontImage{
+    width: 20rem;
+    height: 18rem;
+}
+.blog-card-title{
+    padding: 0.7rem;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.blog-card-text{
+   overflow: hidden;
+   display: -webkit-box;
+   -webkit-line-clamp: 5;
+   -webkit-box-orient: vertical;
+}
