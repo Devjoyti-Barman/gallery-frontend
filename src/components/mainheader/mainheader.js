@@ -10,16 +10,16 @@ function MainHeader(){
             <header className='header'>
                 <div className='header-left'>
                     
-                    <NavLink to='/' className='header-h1'>
+                    <NavLink to='/' className='header-h1 header-navlink' >
                         <img className='header-icon' src={headerIcon} />
                         <h4> Kisan Care </h4>
                     </NavLink>
-                    <NavLink to='search/blog'> blog </NavLink>
+                    <NavLink to='search/blog' className='header-navlink'> blog </NavLink>
              
                 </div>
-                <div>
-                    <NavLink to='signin'> Signin </NavLink>
-                    <NavLink to='signup'> Signup </NavLink>
+                <div className='header-right'>
+                    <NavLink to='signin' className='header-navlink'> Signin </NavLink>
+                    <NavLink to='signup' className='header-navlink'> Signup </NavLink>
                 </div>
             </header>
         </div>

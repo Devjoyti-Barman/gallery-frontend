@@ -30,3 +30,14 @@
     width: 50px;
     height: 40px;
 }
+
+.header-navlink{
+    text-decoration: none;
+    color: black;
+}
+.header-right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 10rem;
+}

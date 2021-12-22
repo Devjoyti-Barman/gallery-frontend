@@ -2,7 +2,7 @@ import './searchBar.css';
 import SearchIcon from '@material-ui/icons/Search';
 function SearchBar(props){
     
-    const {HandleSearchInput}=props;
+    const {HandleSearchInput,HandleSearchClick}=props;
 
     return(
         <div className='search-container'>        
@@ -16,6 +16,7 @@ function SearchBar(props){
                 <SearchIcon
                   color='primary'
                   className='search-icon'
+                  onClick={(e)=>HandleSearchClick('q')}
                 />
             </div>
         </div>
