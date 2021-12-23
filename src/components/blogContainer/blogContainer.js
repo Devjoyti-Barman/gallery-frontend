@@ -17,7 +17,7 @@ function BlogContainer(){
     useEffect(async() => {
         
         try {
-            console.log(search);
+           // console.log(search);
             const API=`http://localhost:3000/blog/search${search}`;
             const response=await axios({
                 method:'GET',
@@ -51,7 +51,7 @@ function BlogContainer(){
 
         
     }, [search]);
-
+    console.log('blog Container');
     return(
         <div>
             <div className='blog-container-holder'> 

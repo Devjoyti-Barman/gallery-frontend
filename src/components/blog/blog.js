@@ -1,22 +1,32 @@
 import './blog.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {useLocation,useNavigate} from 'react-router-dom';
 import SearchBar from '../searchBar/searchBar';
 import BlogContainer from '../blogContainer/blogContainer';
+import Pagination from '../pagination/pagination';
 
 function Blog(){
+    
     
     const {search}=useLocation();
     const query= new URLSearchParams(search);
     const navigate=useNavigate();
-
-    //query.get('anime');
+    
+    const [page,setPage]=useState(1);
 
     const [searchParams,setSearchParams] =useState('');
+
+    useEffect(()=>{
+        
+        setPage(query.get('pageNO')===null ? 1 : query.get('pageNO'));
+    },[search]);
     
     const HandleSearchInput= (event)=>{          
         setSearchParams(event.target.value);
     } 
+    const updatePage=(event)=>{
+        setPage(event.target.value);
+    }
     
     const getUpdateSearchParams=(eventKey,eventValue)=>{
           
@@ -73,7 +83,11 @@ function Blog(){
             />
             
             <BlogContainer/>
-
+            
+            <Pagination 
+                page={page}
+                updatePage={updatePage}
+            />
         </div>
     )
 }
