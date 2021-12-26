@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&family=Outfit&family=Poppins:wght@400&family=Roboto+Mono:wght@300&family=Roboto:wght@300&display=swap');
+
 .header-container{
     background-color: #FFFFFF;
     height: 80px;
@@ -34,10 +36,21 @@
 .header-navlink{
     text-decoration: none;
     color: black;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
+.header-navlink:hover{
+    color: rgb(82, 193, 248);
+    
 }
 .header-right{
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 10rem;
+}
+
+.mainheader-img{
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
 }

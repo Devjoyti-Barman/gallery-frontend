@@ -31,7 +31,6 @@ function ShowBlog(){
         
                 });
                 const {data}=response.data;
-                console.log(data);
 
                 setData({
                     title:data.title,

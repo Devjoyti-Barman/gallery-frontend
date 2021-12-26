@@ -1,6 +1,9 @@
 import './App.css';
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom';
 import { useEffect,useState } from 'react';
+import { useDispatch,useSelector } from 'react-redux';
+
+// importing components
 
 import CreateBlog from './components/CreateBlog/createBlog';
 import ShowBlog from './components/showBlog/showBlog';
@@ -12,33 +15,19 @@ import ChangePassword from './components/changePassword/changePassword';
 import Confirmation from './components/confirmation/confirmation';
 import Blog from './components/blog/blog';
 
+
+// importing redux action
+
+import { fetchUser } from './redux';
+
 function App() {
     
-    const [user,setUser]=useState(null);
-
+	const dispatch=useDispatch();
+	const users=useSelector((state)=>state.user);
+	
 	useEffect(()=>{
-
-		async function getUserDetails(){
-			try {
-				const response=await  fetch("http://localhost:3000/auth/success", {
-					method: "GET",
-					credentials: "include",
-					headers: {
-					  Accept: "application/json",
-					  "Content-Type": "application/json",
-					  "Access-Control-Allow-Credentials": true,
-					},
-				});
-				const data=await response.json();
-			    console.log(data);
-			} catch (error) {
-				console.log('error');
-				console.log(error);
-			}
-			
-		}
-
-		getUserDetails();
+		dispatch(fetchUser());
+		
 	},[])
 
 		return (
@@ -51,6 +40,9 @@ function App() {
 					    
 						<Route path='signup' element={<Signup/>} />
 						<Route path='signin' element={<Signin/> } />
+						<Route path='saved'>
+							<Route path='blog' element={<>hello</>} />
+						</Route>
 						<Route path='forgot-password' element={<ForgotPassword/>} />
 						<Route path='search'>
 							<Route path='blog' element={<Blog/>} />
