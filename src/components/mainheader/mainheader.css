@@ -54,3 +54,7 @@
     height: 2rem;
     cursor: pointer;
 }
+
+.user-img{
+    border-radius: 1rem;
+}

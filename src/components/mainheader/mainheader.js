@@ -51,7 +51,7 @@ function MainHeader(){
                                    alt={bookmarkIcon}
                                    onClick={()=>navigate('/saved/blog')} 
                                 />
-                                <img className='mainheader-img' src={user.photo}/>
+                                <img className='mainheader-img user-img' src={user.photo}/>
 
                             </>
                         )
