@@ -25,11 +25,9 @@ function App() {
     
 	const dispatch=useDispatch();
 	const users=useSelector((state)=>state.user);
-	
 	useEffect(()=>{
 		dispatch(fetchUser());
-		
-	},[])
+	},[]);
 
 		return (
 	    <div>

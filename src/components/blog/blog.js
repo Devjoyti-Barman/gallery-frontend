@@ -13,6 +13,7 @@ function Blog(){
     const navigate=useNavigate();
     
     const [page,setPage]=useState(1);
+    const [totalPage,setTotalPage]=useState(1);
 
     const [searchParams,setSearchParams] =useState('');
 
@@ -21,6 +22,10 @@ function Blog(){
         setPage(query.get('pageNO')===null ? 1 : query.get('pageNO'));
     },[search]);
     
+    const HandleSetTotalPages=(total)=>{
+        setTotalPage(total);
+    }
+
     const HandleSearchInput= (event)=>{          
         setSearchParams(event.target.value);
     } 
@@ -82,11 +87,14 @@ function Blog(){
                HandleSearchClick={HandleSearchClick}
             />
             
-            <BlogContainer/>
+            <BlogContainer
+               HandleSetTotalPages={HandleSetTotalPages}
+            />
             
             <Pagination 
                 page={page}
                 updatePage={updatePage}
+                totalPage={totalPage}
             />
         </div>
     )

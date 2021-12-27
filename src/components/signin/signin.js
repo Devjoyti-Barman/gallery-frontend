@@ -3,10 +3,11 @@ import {Link,useNavigate } from 'react-router-dom';
 import { Button,Typography } from '@material-ui/core';
 import { ToastContainer, toast } from 'react-toastify';
 import EmailValidator  from 'email-validator';
-
+import { useDispatch,useSelector } from 'react-redux';
 import googleicon from '../../images/google-icon.png';
 import { useState } from 'react';
 import axios from 'axios';
+import { fetchUser } from '../../redux';
 
 function Signin(){
     
@@ -20,7 +21,8 @@ function Signin(){
 
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
-
+    const user=useSelector(state=>state.user.users);
+    const dispatch=useDispatch();
     
     const chackParameter= ()=>{
 
@@ -66,13 +68,17 @@ function Signin(){
                 toast.error(response.data.msg);
                 return;
             }
-            
+
+    
+
             // showing the successfully message
             toast.success(response.data.msg);
             
             // after 3000 we will navigate to='/'
-            setTimeout(()=>{
-                navigate('/');
+            setTimeout(()=>{    
+
+                window.open('/','_self','width:100%;height:100%');
+
             },3000);
 
         } catch (error) {
@@ -81,12 +87,25 @@ function Signin(){
             toast.error('Something went wrong. Please try again later');
         }
     }
+    
+    const isUserEmpty=()=>{
+        
+        if(user===null 
+            || user===undefined 
+            || Object.keys(user).length===0 
+            || Object.getPrototypeOf(user)===user.prototype
+        ) return true;
+
+        return false;
+
+    }
 
     return(
         <div>
             <ToastContainer/>
             <div className='signin-container'>
-
+            {
+                isUserEmpty()===true ?
                 <div className='signin'>
                     <h2>Already Have an Account</h2>
                     <p>Sign in with your social media account or email address</p>
@@ -136,7 +155,9 @@ function Signin(){
                         </div>
                     </div>
                 </div>
-
+                :
+                <><h2>You are already login</h2></>
+            }
            </div>
         </div>
     )

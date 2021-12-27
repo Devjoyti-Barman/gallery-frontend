@@ -8,7 +8,7 @@ function Pagination(props){
     const query= new URLSearchParams(search);
     const navigate=useNavigate();
 
-    const {page,updatePage}=props;
+    const {page,updatePage,totalPage}=props;
     
     const getUpdateSearchParams=(eventKey,eventValue)=>{
           
@@ -81,7 +81,7 @@ function Pagination(props){
                        <input type='text' className='pagination-input' value={page} onChange={(event)=>updatePage(event)}/>
                        <Button className='pagination-jump-btn' variant='contained'color='primary' onClick={()=>HandleJump()}>go</Button>
                     </div>
-                    <span className='pagination-span'>of 123</span>
+                    <span className='pagination-span'>of {totalPage}</span>
                 </div>
                 <Button className='pagination-btn' variant="contained" color='primary' onClick={()=>HandleClick(1)}>Next</Button>
                 

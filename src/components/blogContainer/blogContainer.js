@@ -8,11 +8,13 @@ import BlogCard from "../blogCard/blogCard";
 
 
 
-function BlogContainer(){
+function BlogContainer(props){
     
     const [isLoading,setIsLoading]=useState(true);
     const [getCard,setGetCard]=useState([]);
     const {search}=useLocation();
+
+    const {HandleSetTotalPages}=props
 
     useEffect(async() => {
         
@@ -26,7 +28,7 @@ function BlogContainer(){
             });
             
             const data=response.data.data;
-    
+            
             const temp=[];
     
             for(let i=0;i<data.length;i++){
@@ -43,15 +45,15 @@ function BlogContainer(){
             
     
             setGetCard(temp);
+            HandleSetTotalPages(response.data.totalPages);
             setIsLoading(false);
         } catch (error) {
-            console.log(error);
-            alert('error');
+            
+            
         }
 
         
     }, [search]);
-    console.log('blog Container');
     return(
         <div>
             <div className='blog-container-holder'> 
