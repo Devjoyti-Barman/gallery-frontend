@@ -7,8 +7,22 @@ import { NavLink,useNavigate } from "react-router-dom";
 import { useDispatch,useSelector } from 'react-redux';
 
 function MainHeader(){
+    
     const navigate=useNavigate();
     const user=useSelector(state=>state.user.users);
+
+    const isUserEmpty=()=>{
+        
+        if(user===null 
+            || user===undefined 
+            || Object.keys(user).length===0 
+            || Object.getPrototypeOf(user)===user.prototype
+        ) return true;
+
+        return false;
+
+    }
+
     return(
         <div className='header-container'>
             <header className='header'>
@@ -23,7 +37,7 @@ function MainHeader(){
                 </div>
                 <div className='header-right'>
                     {
-                        user===undefined ? ( 
+                        isUserEmpty()===true ? ( 
                             <>     
                               <NavLink to='signin' className='header-navlink'> Sign in </NavLink>
                               <NavLink to='signup' className='header-navlink'> Sign up </NavLink>
@@ -34,9 +48,10 @@ function MainHeader(){
                                 <img  
                                    className='mainheader-img' 
                                    src={bookmarkIcon}
+                                   alt={bookmarkIcon}
                                    onClick={()=>navigate('/saved/blog')} 
                                 />
-                                <img className='mainheader-img' src={user.photo} />
+                                <img className='mainheader-img' src={user.photo}/>
 
                             </>
                         )

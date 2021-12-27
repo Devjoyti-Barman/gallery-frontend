@@ -14,7 +14,7 @@ import ForgotPassword from './components/forgotPassword/forgotPassword';
 import ChangePassword from './components/changePassword/changePassword';
 import Confirmation from './components/confirmation/confirmation';
 import Blog from './components/blog/blog';
-
+import SavedBlog from './components/savedBlog/savedBlog';
 
 // importing redux action
 
@@ -41,7 +41,7 @@ function App() {
 						<Route path='signup' element={<Signup/>} />
 						<Route path='signin' element={<Signin/> } />
 						<Route path='saved'>
-							<Route path='blog' element={<>hello</>} />
+							<Route path='blog' element={<SavedBlog/>} />
 						</Route>
 						<Route path='forgot-password' element={<ForgotPassword/>} />
 						<Route path='search'>
