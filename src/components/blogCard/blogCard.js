@@ -16,7 +16,47 @@ function BlogCard(props){
         const routePath=`/show/blog/${id}`;
         navigate(routePath);
     }
+    const HandleSaveBlog=async()=>{
+        setIsSave(true);
+        const url='http://localhost:3000/blog/save';
+        
+        try {
+            const {data}=await axios({
+                method:'PUT',
+                url:url,
+                withCredentials:true,
+                data:{
+                    blogID:id
+                }
+            });
+
+        } catch (error) {
+            alert('something went wrong...');
+            console.log(error);
+        }
+    }
     
+    const HanldeUnsaveBlog=async()=>{
+        
+        setIsSave(false);
+        const url='http://localhost:3000/blog/unSave';
+
+        try {
+            const {data}=await axios({
+                method:'PUT',
+                url:url,
+                withCredentials:true,
+                data:{
+                    blogID:id
+                }
+            })
+    
+        } catch (error) {
+            alert('something went wrong');
+        }
+    }
+    
+    // it will run everytime to open this component
     useEffect(()=>{
         
         const url='http://localhost:3000/blog/isSave';
@@ -65,7 +105,7 @@ function BlogCard(props){
                 </p>
             </div>
             <div className='save-blog-container'>
-               {isSave===true ? <BookmarkIcon/> :<BookmarkBorderIcon/>}
+               {isSave===true ? <BookmarkIcon onClick={HanldeUnsaveBlog}/> :<BookmarkBorderIcon onClick={HandleSaveBlog}/>}
             </div>
         </div>
     )
