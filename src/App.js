@@ -20,6 +20,7 @@ import TestComponent from './components/testingComponent/testComponent';
 // importing redux action
 
 import { fetchUser } from './redux';
+import Footer from './components/footer/footer';
 
 function App() {
     
@@ -60,6 +61,7 @@ function App() {
 							</Route>
 						</Route>
     		    	</Routes>
+					<Footer/>
     		    </Router>
 			</main>
 		</div>

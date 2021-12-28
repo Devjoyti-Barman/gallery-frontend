@@ -39,8 +39,8 @@ function MainHeader(){
                     {
                         isUserEmpty()===true ? ( 
                             <>     
-                              <NavLink to='signin' className='header-navlink'> Sign in </NavLink>
-                              <NavLink to='signup' className='header-navlink'> Sign up </NavLink>
+                              <NavLink to='signin' className='header-navlink auth-link'> Sign in </NavLink>
+                              <NavLink to='signup' className='header-navlink auth-link'> Sign up </NavLink>
                             </>
                         ) : (
                             

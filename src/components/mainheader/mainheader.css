@@ -37,11 +37,22 @@
     text-decoration: none;
     color: black;
     font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 1rem;
 }
-.header-navlink:hover{
-    color: rgb(82, 193, 248);
-    
+.auth-link{
+    background-color: #3f51b5;;
+    padding: 10px 27px;
+    border-radius: 25px;
+    font-size: 1rem;
+    text-decoration: none !important;
+    margin-right: 20px;
+    border: 0;
+    white-space: nowrap;
+    cursor: pointer;
+    outline: 0;
+    color: #fff;
 }
+
 .header-right{
     display: flex;
     align-items: center;
