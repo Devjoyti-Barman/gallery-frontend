@@ -52,6 +52,7 @@
 .blog-body{
    font-size: 20px;
    margin-left: 2rem;
+   margin-right: 2rem;
 }
 
 .blog-body span  img{
@@ -59,4 +60,10 @@
 }
 .blog-body p img{
     width: 500px;
+}
+
+.horizontal-line{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-top: 1px solid gray;
 }

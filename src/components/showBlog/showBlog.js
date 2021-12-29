@@ -69,6 +69,7 @@ function ShowBlog(){
                     </div>
                    
                 </div>
+                <div className='horizontal-line'></div>
                 <div className='blog-body'>
                     <Markup content={data.body}/>
                 </div>
