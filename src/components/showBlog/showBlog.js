@@ -9,11 +9,14 @@ import BookmarkIcon from '@material-ui/icons/Bookmark';
 
 function ShowBlog(){
     
+    const months=['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November','December'];
+
     const [data,setData]=useState({
        title:'',
        author:'',
        frontImage:'',
-       body:''
+       body:'',
+       time:''
     });
     
     const {blogID}=useParams();
@@ -76,12 +79,18 @@ function ShowBlog(){
         
                 });
                 const {data}=response.data;
+                
+                // making time format
+                const createdAt=data.createdAt;
+                const date=createdAt.split('T')[0].split('-');                
+                const time=date[2]+' '+months[ parseInt(date[1])-1 ]+', '+date[0];
 
                 setData({
                     title:data.title,
                     author:data.author,
                     frontImage:data.frontImage,
-                    body:data.body
+                    body:data.body,
+                    time:time
                 })
 
             } catch ({response}) {
@@ -148,7 +157,7 @@ function ShowBlog(){
                         />
                         <div className='author-name'> 
                            <div> {data.author} </div>
-                           <div> 20 March,2020 </div> 
+                           <div> {data.time} </div> 
                         </div>
                     </div>
                    
