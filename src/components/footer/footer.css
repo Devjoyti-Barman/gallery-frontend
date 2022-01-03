@@ -1,5 +1,45 @@
-.footer-container{
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&family=Outfit&family=Poppins:wght@300&family=Roboto+Mono:wght@300&family=Roboto:wght@300&display=swap');
+
+.footer{
     background-color: #273239;
     min-height: 15rem;
     color: white;
+    overflow: auto;
+    
+}
+
+.footer-container{
+    margin: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.follow-link-container,.footer-section{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Lato', sans-serif;
+}
+
+.footer-section h2{
+    margin-top: 0px;
+}
+
+.follow-social-link{
+   font-size: 2rem !important;
+   margin: 0.3rem 0rem;
+   cursor: pointer;
+}
+
+.footer-about-link{
+    color: white;
+    text-decoration: none;
+    font-size: 2 rem !important;
+    margin: 0.5rem 0rem;
+}
+
+.footer-s1-img{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 5rem;
+
 }

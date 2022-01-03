@@ -4,7 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import {useLocation} from 'react-router-dom';
 import BlogCard from "../blogCard/blogCard";
-
+import BlogCard2 from '../blogCard2/blogCard2';
 
 
 
@@ -28,15 +28,18 @@ function BlogContainer(props){
             });
             
             const data=response.data.data;
-            
+
             const temp=[];
     
             for(let i=0;i<data.length;i++){
                 
                 temp.push(
-                    <BlogCard
+                    <BlogCard2
                         frontImage={data[i].frontImage}
                         title={data[i].title}
+                        createdAt={data[i].createdAt}
+                        body={data[i].body}
+                        author={data[i].author}
                         id={data[i]._id}
                         key={i}
                     />
