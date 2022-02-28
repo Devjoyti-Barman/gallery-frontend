@@ -1,4 +1,4 @@
-import { FETCH_USERS_FAILURE, FETCH_USERS_REQUEST, FETCH_USERS_SUCCESS } from "./userTypes"
+import { FETCH_USERS_FAILURE, FETCH_USERS_REQUEST, FETCH_USERS_SUCCESS, LOGOUT } from "./userTypes"
 
 const initialState={
     loading:false,
@@ -31,6 +31,14 @@ const userReducer=(state=initialState,action)=>{
                 users:{},
                 error:action.payload
             }
+        
+        case LOGOUT:
+            return{
+                ...state,
+                loading:false,
+                users:{},
+            }
+
         default: return state
     }
 }

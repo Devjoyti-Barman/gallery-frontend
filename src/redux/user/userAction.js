@@ -1,5 +1,5 @@
 import axios from "axios"
-import { FETCH_USERS_FAILURE, FETCH_USERS_REQUEST,FETCH_USERS_SUCCESS } from "./userTypes"
+import { FETCH_USERS_FAILURE, FETCH_USERS_REQUEST,FETCH_USERS_SUCCESS, LOGOUT } from "./userTypes"
 
 const LoginSuccessful='http://localhost:3000/auth/success';
 
@@ -20,6 +20,13 @@ export const fetchUsersFailure=(error)=>{
     return {
         type:FETCH_USERS_FAILURE,
         payload:error
+    }
+}
+
+export const Logout=()=>{
+    return{
+        type:LOGOUT,
+        payload:{}
     }
 }
 

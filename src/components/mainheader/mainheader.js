@@ -2,14 +2,28 @@ import './mainheader.css';
 import headerIcon from '../../images/kisan-care.jpg'
 import bookmarkIcon from '../../images/bookmark.png';
 
-import { NavLink,useNavigate } from "react-router-dom";
+import { Link, NavLink,useNavigate } from "react-router-dom";
 
 import { useDispatch,useSelector } from 'react-redux';
+import { Logout } from '../../redux';
+import axios from 'axios';
 
 function MainHeader(){
     
     const navigate=useNavigate();
     const user=useSelector(state=>state.user.users);
+    const dispatch=useDispatch();
+
+    const HandleLogout=()=>{
+          
+        dispatch(Logout());
+        axios.get('http://localhost:3000/auth/logout',{withCredentials:true})
+        .then(res=>console.log(res))
+        .catch(err=>{
+            console.log('the error is\n',err);
+        });
+        navigate('/');
+    }
 
     const isUserEmpty=()=>{
         
@@ -52,7 +66,12 @@ function MainHeader(){
                                    onClick={()=>navigate('/saved/blog')} 
                                 />
                                 <img className='mainheader-img user-img' src={user.photo}/>
+                                <Link 
+                                    to="#" 
+                                    className='logout-link' 
+                                    onClick={HandleLogout}
 
+                                >Logout</Link>
                             </>
                         )
                     }
