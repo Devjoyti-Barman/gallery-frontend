@@ -72,6 +72,7 @@ function MainHeader(){
                                     onClick={HandleLogout}
 
                                 >Logout</Link>
+                                {user.admin===true? <Link className='link' to='/create/blog'>create blog</Link> : <></>}
                             </>
                         )
                     }
